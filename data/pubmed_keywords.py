@@ -99,5 +99,5 @@ KEYWORDS = [
     "Artificial Intelligence",
     "Machine Learning",
     "Data Mining",
-    "Bioinformatics"
+    "Bioinformatics",
 ]

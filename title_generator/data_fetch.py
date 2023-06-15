@@ -1,5 +1,4 @@
 from Bio import Entrez
-from data.pubmed_keywords import KEYWORDS
 from tqdm import tqdm
 import os
 import csv
@@ -19,11 +18,13 @@ def fetch_abstracts_and_title(keywords, amount, output_file_name):
         ids = set(search_results["IdList"])
         for article_id in tqdm(ids):
             try:
-                fetch_handle = Entrez.efetch(db="pubmed", id=article_id, retmode="xml")
+                fetch_handle = Entrez.efetch(
+                    db="pubmed", id=article_id, retmode="xml"
+                )
                 record = Entrez.read(fetch_handle)
-                title = record["PubmedArticle"][0]["MedlineCitation"]["Article"][
-                    "ArticleTitle"
-                ]
+                title = record["PubmedArticle"][0]["MedlineCitation"][
+                    "Article"
+                ]["ArticleTitle"]
 
                 abstract_xml = record["PubmedArticle"][0]["MedlineCitation"][
                     "Article"
@@ -32,15 +33,13 @@ def fetch_abstracts_and_title(keywords, amount, output_file_name):
             except:
                 continue
             abstracts_and_title.append((abstract, title))
-    print(
-        f"{len(abstracts_and_title)} Abstract and titles fetched!"
-    )
+    print(f"{len(abstracts_and_title)} Abstract and titles fetched!")
 
     with open(
-        os.path.join("data", f"{output_file_name}.csv"), "w", newline=""
+        os.path.join("../data", f"{output_file_name}.csv"), "w", newline=""
     ) as f:
         writer = csv.writer(f)
         writer.writerows(abstracts_and_title)
 
 
-fetch_abstracts_and_title(KEYWORDS, 1000, "abstracts_and_titles_10000x100")
+# fetch_abstracts_and_title(KEYWORDS, 1000, "abstracts_and_titles_10000x100")
