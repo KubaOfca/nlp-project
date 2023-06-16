@@ -10,8 +10,8 @@ def test_preprocessing():
                 "Some <b>text ( bla bla)</b>",
             ],
             "Column2": [
-                "<h1>Title!!!! aby żeby ?! > ? ! zeby [ { ( ) } ].</h1>",
-                "Another !<!i>paragraph {bla bla (bla!) [bla bla]} </i>",
+                "<h1>Title!!!! 1983 aby żeby ?! > ? ! zeby [ { ( ) } ].</h1>",
+                "Another !<!i>paragraph 1832r {bla bla (bla!) [bla bla]} </i>",
             ],
         }
     )
