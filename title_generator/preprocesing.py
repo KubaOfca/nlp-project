@@ -19,7 +19,9 @@ def pre_processing(df: pd.DataFrame) -> pd.DataFrame:
         polish_stopwords_preprocessing,
     ]
 
+    # make a copy of input dataframe and apply each step from pipeline
     df_pre_processing = df.copy()
+
     for step in pipeline:
         try:
             print("[PREPROCESSING] ", f"'{step.__name__}'")
@@ -30,6 +32,7 @@ def pre_processing(df: pd.DataFrame) -> pd.DataFrame:
         else:
             print("[PREPROCESSING] Done!")
 
+    # save preprocessed data with a timestamp
     current_time = datetime.now().time()
     df_pre_processing.to_csv(
         os.path.join(
