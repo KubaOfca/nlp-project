@@ -25,4 +25,3 @@
     <li>project-nlp.ipynb - główna część projektu, która przede wszystkim zawiera model, jego trenowanie i komentarz do jego wyników</li>
     <li>req.txt - plik zawierający informację o wersjach używanych bibliotek w języku Python</li>
 </ul>
-<p>Aby nadawał się do readme na <a href="https://www.github.com">Github</a> i ładnie wyglądał.</p>
