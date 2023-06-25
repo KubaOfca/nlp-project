@@ -41,5 +41,3 @@ def fetch_abstracts_and_title(keywords, amount, output_file_name):
         writer = csv.writer(f)
         writer.writerows(abstracts_and_title)
 
-
-# fetch_abstracts_and_title(KEYWORDS, 1000, "abstracts_and_titles_10000x100")
