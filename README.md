@@ -4,6 +4,8 @@
 <h2><em>Celem tego projektu było utworzenie modelu LSTM (long-short term memory), który na podstawie streszczeń artykułów będzie generował ich tytuły.</em></h2>
 <p>Z bazy PubMed pobrano tytuły i abstrakty publikacji naukowych, następnie poddano je preprocessingowi, a następnie po podzieleniu ich na zbiory testowy i treningowy, trenowano model.</p>
 <p>Projekt zawierał wykorzystanie platformy <a href="https://www.kaggle.com">kaggle.com</a> do budowy i trenowania modelu (w trzech różnych wariantach - dla uproszczenia nie zawarto ich wszystkich w niniejszym podsumowaniu) przy wykorzystaniu GPU P100.</p>
+
+
 <h3>Architektura projektu:</h3>
 <ul>
     <li>data:
